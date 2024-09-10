@@ -1,9 +1,6 @@
 This software is a Memory Allocator written in c++.
 The basic functions that should work are allocating memory, and freeing memory 
-
-First we must find our total dyanamic memory and its size.
-
-Next we constructg a bitmap with A ratio of one bit per block
+The data streucture used to represent avalibale data should be implemented as a bitmap.
 
 
 ---First Fit Allocation ---
