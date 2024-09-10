@@ -19,7 +19,7 @@ class MemoryAllocator {
 private:
     void* memoryPool;    // Pointer to the start of the memory pool
     size_t poolSize;     // Size of the entire memory pool
-    BlockHeader* freeList; // Linked list of free memory blocks
+    BlockHeader* freeList; // Linked list of free memory blocks would probably be the best data structure 
 
 public:
     // Constructor that initializes the memory pool
