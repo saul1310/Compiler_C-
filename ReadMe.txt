@@ -17,3 +17,6 @@ Scan the entire bitmap, which will take more time, but return the smallest spot 
 Fragmentation--> Cheese type bitmap where there is enough space, but not in a continuous subsequence, and cannot be held.
 Defragmentation is possible but takes a lot of time and is best avoided. An additional Function could be Reallocating memory to create a best fit that is even more efficient.
 Granularity vs space occupation?
+
+
+Please contribute anything you think would be helpful to this repository!
