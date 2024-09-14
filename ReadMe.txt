@@ -5,7 +5,7 @@ The data structure used to represent available data should be implemented as a b
 
 ---First Fit Allocation ---
 When the allocator is called the input should be the requested amount of memory. we want to allocate a number of blocks that is equal to the requested amount.
-On way to do this would be to scan the bitmap from left to right looking for the desired space. If it fails it will tell the user that its out of memory.
+On way to do this would be to scan the bitmap from left to right until a location with enough space is found. If it fails it will tell the user that its out of memory.
 
 
 
