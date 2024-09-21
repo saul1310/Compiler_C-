@@ -30,5 +30,6 @@ namespace AllocatorUtils {
  inline void ZeroMemory(void* ptr, std::size_t size) {
         std::memset(ptr, 0, size);
     }
+}
 
 #endif // ALLOCATOR_UTILS_H
