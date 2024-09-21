@@ -30,7 +30,7 @@ void* MemoryAllocator::allocate(size_t size) {
 }
 
 void MemoryAllocator::deallocate(void* ptr) {
-    if (!ptr) return;  // if does not exist
+    if (!ptr) return; // account for if pointer does not exist
     
     Block* block = reinterpret_cast<Block*>(reinterpret_cast<char*>(ptr) - sizeof(Block));
     block->free = true;
