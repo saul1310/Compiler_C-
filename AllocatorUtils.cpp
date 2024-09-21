@@ -23,3 +23,7 @@ namespace AllocatorUtils {
         }
         return alignment - misalignment;
     }
+ inline std::size_t CalculateTotalSizeWithPadding(std::size_t size, std::size_t alignment) {
+        std::size_t padding = CalculatePadding(size, alignment);
+        return size + padding;
+    }
