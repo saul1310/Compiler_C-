@@ -11,3 +11,8 @@ namespace AllocatorUtils {
         }
         return ptr + (alignment - misalignment);
     }
+
+  // Checks if the pointer is aligned to the required alignment
+    inline bool IsAligned(std::uintptr_t ptr, std::size_t alignment) {
+        return (ptr % alignment) == 0;
+    }
