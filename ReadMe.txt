@@ -20,3 +20,6 @@ Granularity vs space occupation?
 
 
 Please contribute anything you think would be helpful to this repository!
+
+
+This is essentially completed, i am looking for a place to advertise this as an alternative to the standard allocator right now.
