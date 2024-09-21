@@ -27,3 +27,6 @@ namespace AllocatorUtils {
         std::size_t padding = CalculatePadding(size, alignment);
         return size + padding;
     }
+ inline void ZeroMemory(void* ptr, std::size_t size) {
+        std::memset(ptr, 0, size);
+    }
