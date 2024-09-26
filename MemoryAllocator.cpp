@@ -54,8 +54,7 @@ public:
     }
 
 void deallocate(void* ptr) {
-        // For a simple allocator, deallocate can be a no-op or handled later by free.
-        // In more complex allocators (e.g., with free lists), deallocation logic would go here.
+       
     }
 
  void reset() {
