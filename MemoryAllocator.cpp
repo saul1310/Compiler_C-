@@ -78,3 +78,29 @@ int main() {
         // Allocate some memory
         void* block1 = allocator.allocate(64);
         void* block2 = allocator.allocate(128);
+   std::cout << "Block1 Address: " << block1 << " Is Aligned: " << isAligned(block1, alignment) << std::endl;
+        std::cout << "Block2 Address: " << block2 << " Is Aligned: " << isAligned(block2, alignment) << std::endl;
+
+        // Initialize memory for debugging
+        initializeMemory(block1, 64, 0xAA);
+        initializeMemory(block2, 128, 0xBB);
+
+        // Print memory content
+        std::cout << "Block1 Memory Content: ";
+        printMemoryBlock(block1, 64);
+        std::cout << "Block2 Memory Content: ";
+        printMemoryBlock(block2, 128);
+
+        // Reset the allocator
+        allocator.reset();
+
+        // Allocate again after reset
+        void* block3 = allocator.allocate(256);
+        std::cout << "Block3 Address: " << block3 << " Is Aligned: " << isAligned(block3, alignment) << std::endl;
+
+    } catch (const std::bad_alloc&) {
+        std::cerr << "Memory allocation failed!" << std::endl;
+    }
+
+    return 0;
+}
