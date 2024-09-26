@@ -47,3 +47,9 @@ public:
         if (static_cast<std::uint8_t*>(currentPtr) + size > static_cast<std::uint8_t*>(basePtr) + totalSize) {
             throw std::bad_alloc();  // Not enough memory
         }
+
+  void* allocatedPtr = currentPtr;
+        currentPtr = static_cast<std::uint8_t*>(currentPtr) + size;  // Move the pointer forward
+        return allocatedPtr;
+    }
+
