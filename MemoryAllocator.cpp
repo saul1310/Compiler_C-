@@ -16,3 +16,8 @@ void printMemoryBlock(const void* ptr, std::size_t size) {
     }
     std::cout << std::dec << std::endl;  // Reset output to decimal
 }
+
+bool isAligned(const void* ptr, std::size_t alignment) {
+    return reinterpret_cast<std::uintptr_t>(ptr) % alignment == 0;
+}
+
