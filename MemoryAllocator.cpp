@@ -42,3 +42,8 @@ public:
         std::free(basePtr);
     }
 
+   void* allocate(std::size_t size) {
+        size = alignSize(size, alignment);  // Align the requested size
+        if (static_cast<std::uint8_t*>(currentPtr) + size > static_cast<std::uint8_t*>(basePtr) + totalSize) {
+            throw std::bad_alloc();  // Not enough memory
+        }
