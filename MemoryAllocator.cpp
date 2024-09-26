@@ -14,7 +14,7 @@ void printMemoryBlock(const void* ptr, std::size_t size) {
     for (std::size_t i = 0; i < size; ++i) {
         std::cout << std::hex << static_cast<int>(bytePtr[i]) << " ";
     }
-    std::cout << std::dec << std::endl;  // Reset output to decimal
+    std::cout << std::dec << std::endl;  // Reset
 }
 
 bool isAligned(const void* ptr, std::size_t alignment) {
@@ -29,7 +29,7 @@ class MemoryAllocator {
 public:
     MemoryAllocator(std::size_t totalSize, std::size_t alignment)
         : totalSize(totalSize), alignment(alignment) {
-        // Allocate aligned memory
+        // Allocate 
         basePtr = std::malloc(totalSize);
         if (!basePtr) {
             throw std::bad_alloc();
@@ -38,14 +38,14 @@ public:
     }
 
  ~MemoryAllocator() {
-        // Free the memory
+        // Free
         std::free(basePtr);
     }
 
    void* allocate(std::size_t size) {
-        size = alignSize(size, alignment);  // Align the requested size
+        size = alignSize(size, alignment);  // Align
         if (static_cast<std::uint8_t*>(currentPtr) + size > static_cast<std::uint8_t*>(basePtr) + totalSize) {
-            throw std::bad_alloc();  // Not enough memory
+            throw std::bad_alloc();  // this will throw if there is not enough size 
         }
 
   void* allocatedPtr = currentPtr;
@@ -69,8 +69,8 @@ private:
 };
 
 int main() {
-    const std::size_t memoryPoolSize = 1024;  // Total size of memory pool
-    const std::size_t alignment = 16;  // Alignment boundary
+    const std::size_t memoryPoolSize = 1024;  // Total size
+    const std::size_t alignment = 16;  // boundary
 
   try {
         MemoryAllocator allocator(memoryPoolSize, alignment);
