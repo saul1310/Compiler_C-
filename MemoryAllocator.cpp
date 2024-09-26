@@ -24,3 +24,15 @@ bool isAligned(const void* ptr, std::size_t alignment) {
 bool isAligned(const void* ptr, std::size_t alignment) {
     return reinterpret_cast<std::uintptr_t>(ptr) % alignment == 0;
 }
+
+class MemoryAllocator {
+public:
+    MemoryAllocator(std::size_t totalSize, std::size_t alignment)
+        : totalSize(totalSize), alignment(alignment) {
+        // Allocate aligned memory
+        basePtr = std::malloc(totalSize);
+        if (!basePtr) {
+            throw std::bad_alloc();
+        }
+        currentPtr = basePtr;
+    }
