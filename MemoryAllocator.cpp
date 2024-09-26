@@ -67,3 +67,7 @@ private:
     void* basePtr;
     void* currentPtr;
 };
+
+int main() {
+    const std::size_t memoryPoolSize = 1024;  // Total size of memory pool
+    const std::size_t alignment = 16;  // Alignment boundary
