@@ -58,4 +58,7 @@ void deallocate(void* ptr) {
         // In more complex allocators (e.g., with free lists), deallocation logic would go here.
     }
 
+ void reset() {
+        currentPtr = basePtr;  // Reset the allocator to reuse memory
+    }
 
