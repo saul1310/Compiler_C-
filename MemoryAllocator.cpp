@@ -36,3 +36,9 @@ public:
         }
         currentPtr = basePtr;
     }
+
+ ~MemoryAllocator() {
+        // Free the memory
+        std::free(basePtr);
+    }
+
