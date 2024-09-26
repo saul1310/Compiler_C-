@@ -61,3 +61,9 @@ void deallocate(void* ptr) {
         currentPtr = basePtr;  // Reset the allocator to reuse memory
     }
 
+private:
+    std::size_t totalSize;
+    std::size_t alignment;
+    void* basePtr;
+    void* currentPtr;
+};
