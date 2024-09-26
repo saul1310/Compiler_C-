@@ -21,3 +21,6 @@ bool isAligned(const void* ptr, std::size_t alignment) {
     return reinterpret_cast<std::uintptr_t>(ptr) % alignment == 0;
 }
 
+bool isAligned(const void* ptr, std::size_t alignment) {
+    return reinterpret_cast<std::uintptr_t>(ptr) % alignment == 0;
+}
