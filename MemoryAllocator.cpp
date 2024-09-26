@@ -71,3 +71,10 @@ private:
 int main() {
     const std::size_t memoryPoolSize = 1024;  // Total size of memory pool
     const std::size_t alignment = 16;  // Alignment boundary
+
+  try {
+        MemoryAllocator allocator(memoryPoolSize, alignment);
+
+        // Allocate some memory
+        void* block1 = allocator.allocate(64);
+        void* block2 = allocator.allocate(128);
